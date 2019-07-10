@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Hola mundo</title>
+
+	<style media="screen">
+		.campo{
+			margin-bottom: 10px;
+		}
+	</style>
+
+</head>
+<body>
+	<h1>Probando Local Storage</h1>
+	<p id="result"></p>
+
+	<div id="app">
+		<!-- {{ $data }} -->
+		<ul>
+			<li v-for="usuario in usuarios">{{ usuario.nombre }} - {{ usuario.email }}</li>
+		</ul>
+
+		<h3>Insertar registro</h3>
+		<form @submit.prevent="guardarRegistro">
+			<div class="campo">
+				<label for="nombre">Nombre:</label>
+				<input type="text" name="nombre" v-model="nombre">
+			</div>
+			<div class="campo">
+				<label for="email">Email:</label>
+				<input type="email" name="email" v-model="email">
+			</div>
+
+			<div>
+				<button>Guardar</button>
+			</div>
+		</form>
+	</div>
+
+	<script
+	  src="https://code.jquery.com/jquery-1.12.4.min.js"
+	  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+	  crossorigin="anonymous"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+	<script src="scripts.js"></script>
+
+</body>
+</html>
